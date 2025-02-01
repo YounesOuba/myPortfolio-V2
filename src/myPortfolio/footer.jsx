@@ -52,7 +52,7 @@ function Footer() {
                     </a>
                 ))}
             </div>
-            <p className="mt-6 text-sm text-gray-400" data-aos="fade-up" data-aos-delay="800">© 2023 My Portfolio. All rights reserved.</p>
+            <p className="mt-6 text-sm text-gray-400" data-aos="fade-up" data-aos-delay="800">© 2025 My Portfolio. All rights reserved.</p>
         </footer>
     );
 }

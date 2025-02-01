@@ -82,10 +82,11 @@ function Contact() {
                     <form className="flex flex-col gap-6 mt-6"
                     action="https://formspree.io/f/mrbekgyq"
                     method="POST"
+                    accept-charset="UTF-8"
                     >
-                        <input type="text" placeholder="Your Name" className="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all"/>
-                        <input type="email" placeholder="Your Email" className="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all"/>
-                        <textarea placeholder="Your Message" rows="5" className="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all"></textarea>
+                        <input type="text" name="Name" placeholder="Your Name" className="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all" required/>
+                        <input type="email" name="Email" placeholder="Your Email" className="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all" required/>
+                        <textarea placeholder="Your Message" name="message" rows="5" className="p-4 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all"></textarea>
                         <button type="submit" className="bg-purple-500 hover:bg-purple-700 text-white py-3 px-6 rounded-lg transition-all mt-4">
                             Send Message
                         </button>
