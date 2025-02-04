@@ -18,7 +18,7 @@ function Contact() {
 
     
     return (
-        <div className="contact p-12 py-40 w-full min-h-screen flex flex-col items-center text-white">
+        <div className="contact -mt-8 p-12 py-40 w-full min-h-screen flex flex-col items-center text-white">
             <h1 className="text-5xl font-extrabold text-center mb-10 tracking-wide"
                 data-aos="fade-down"
                 data-aos-delay="200"

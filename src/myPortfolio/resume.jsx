@@ -25,7 +25,7 @@ function Resume() {
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
             >
-                Resume
+                My Resume
             </h1>
             <section className="resume-content w-4/5 bg-slate-300/10 p-10 rounded-2xl shadow-lg flex flex-col gap-8"
                 data-aos="fade-in"

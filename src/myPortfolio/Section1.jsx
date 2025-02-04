@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css';
+import './responsivity.css'
 import 'boxicons';
 import 'tailwindcss/tailwind.css';
 import myPic from './assets/myPic.png';
@@ -10,7 +11,7 @@ import 'aos/dist/aos.css';
 function Home() {
   AOS.init()
     return (
-        <section className="homeSection text-center py-20 flex flex-col items-center animate-fade-in-down w-full"
+        <section className="homeSection text-center py-20 flex flex-col items-center animate-fade-in-down w-full mt-8"
         aos-data="zoom-in"
         data-aos-duration="2000"
         >

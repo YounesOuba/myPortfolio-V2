@@ -61,7 +61,8 @@ import bgVideo from './assets/bg2.mp4';
 import Links from './sc-Links';
 import Section3 from './section3';
 import Services from './services';
-import Resume from './section4';
+import Resume from './resume';
+import Projects from './projects';
 import Contact from './contact';
 import Footer from './footer';
 
@@ -69,6 +70,7 @@ import Footer from './footer';
 function Portfolio() {
   const [loading, setLoading] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
 
   useEffect(() => {
@@ -85,27 +87,40 @@ function Portfolio() {
   
 
   useEffect(() => {
+    const sections = document.querySelectorAll('section');
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
   
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const light = document.querySelector('.light');
-      if (light) {
-        light.style.left = `${e.clientX}px`;
-        light.style.top = `${e.clientY}px`;
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   return (
     <div className="bg-transparent -z-11 min-h-screen flex flex-col items-center justify-center text-white">
@@ -113,21 +128,54 @@ function Portfolio() {
         <Loader />
       ) : (
         <>
-          <HeaderComponent isScrolled={isScrolled}/>
-          <VideoBackground videoSrc={ bgVideo } className="bgVideo"/>
-          <Home />
-          <Links />
-          <About />          
-          <Services />
-          <Section3 />
-          <Resume />
-          <Contact />
+          <HeaderComponent isScrolled={isScrolled} />
+          <VideoBackground videoSrc={bgVideo} className="bgVideo" />
+          <section id="home" className='section w-full'>
+            <Home />
+          </section>
+          <section id="links" className='section w-full'>
+            <Links />
+          </section>
+          <section id="about" className='section w-full'>
+            <About />
+          </section>
+          <section id="services" className='section w-full'>
+            <Services />
+          </section>
+          <section id="section3" className='section w-full'>
+            <Section3 />
+          </section>
+          <section id="resume" className='section w-full'>
+            <Resume />
+          </section>
+          <section id="project" className='section w-full'>
+            <Projects />
+          </section>
+          <section id="contact" className='section w-full'>
+            <Contact />
+          </section>
           <Footer />
         </>
-        
+
      )}
     </div>
   );
 }
 
 export default Portfolio;
+
+
+
+
+{/* <>
+<HeaderComponent isScrolled={isScrolled}/>
+<VideoBackground videoSrc={ bgVideo } className="bgVideo"/>
+<Home />
+<Links />
+<About />          
+<Services />
+<Section3 />
+<Resume />
+<Contact />
+<Footer />
+</> */}
