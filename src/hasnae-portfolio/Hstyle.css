@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Condiment&family=Goldman:wght@400;700&family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap');
+
+
+
+/* Global background styles */
+body {
+    transition: background-color 0.3s ease;
+  }
+  
+  html {
+    background-color: #fff; 
+  }
+  
+  html.dark {
+    background-color: #1a202c; 
+  }
+  
+
+  body{
+    font-family: "Orbitron", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    box-sizing: border-box;
+  }
